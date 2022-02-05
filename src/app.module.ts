@@ -9,6 +9,8 @@ import { WinstonModule } from 'nest-winston';
 import { winstonConfig } from './configs/winston.config';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { mailerConfig } from './configs/mailer.config';
+import { ReleaseModule } from './release/release.module';
+import { ReleasesModule } from './releases/releases.module';
 
 @Module({
 	imports: [
@@ -17,6 +19,8 @@ import { mailerConfig } from './configs/mailer.config';
 		MailerModule.forRoot(mailerConfig),
 		UsersModule,
 		AuthModule,
+		ReleaseModule,
+		ReleasesModule,
 	],
 	controllers: [],
 	providers: [
